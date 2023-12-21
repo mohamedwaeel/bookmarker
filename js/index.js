@@ -53,6 +53,9 @@ function clearForm() {
     siteUrl.value = "";
     document.getElementById("validName").classList.add("d-none");
     document.getElementById("validUrl").classList.add("d-none");
+    document.getElementById("sitename").classList.remove("is-valid");
+    document.getElementById("siteurl").classList.remove("is-valid");
+
 
 
 }
@@ -84,7 +87,7 @@ function validSiteName() {
 
 function validSiteUrl() {
  
-    let regex = /^(https:\/\/|http:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w.-]*)*\/?$/i;
+    let regex = /^(https:\/\/|http:\/\/)([\da-z.-]+)\.([a-z.]{2,6})([/\w.-]*)*\/?$/i;
     let isValid = regex.test(siteUrl.value);
 
     if (isValid) {
