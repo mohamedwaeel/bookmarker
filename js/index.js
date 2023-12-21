@@ -2,13 +2,11 @@
 
 let siteName = document.querySelector("#sitename");
 let siteUrl = document.querySelector("#siteurl");
+let sbmtBtn = document.querySelector("#submitButton");
+let siteNameValidation=document.querySelector("#sitename");
+let siteUrlValidation=document.querySelector("#siteurl");
 let sitesList = [];
-let sbmtBtn = document.querySelector("#submitButton")
-sbmtBtn.addEventListener('click', () => {
-    addSites();
-    displaySites(sitesList);
 
-})
 
 
 if (localStorage.getItem("allSites")) {
@@ -109,7 +107,10 @@ function validSiteUrl() {
     return isValid;
 
 }
-let siteNameValidation=document.querySelector("#sitename");
+sbmtBtn.addEventListener('click', () => {
+    addSites();
+    displaySites(sitesList);
+
+})
 siteNameValidation.addEventListener('input',()=>{return validSiteName()})
-let siteUrlValidation=document.querySelector("#siteurl");
 siteUrlValidation.addEventListener('input',()=>{return validSiteUrl()})
